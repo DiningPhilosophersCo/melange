@@ -244,6 +244,7 @@ let main keyword_file output_name =
     keywords_array :: binary_search
   in
   let oc = open_out_bin output_name in
+  set_binary_mode_out oc true;
   write_ast oc ast;
   close_out oc
 

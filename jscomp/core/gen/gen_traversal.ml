@@ -9,6 +9,7 @@ let parse fname =
 
 let write_ast ~input_name output_name ast =
   let oc = open_out_bin output_name in
+  set_binary_mode_out oc true;
   Fun.protect
     ~finally:(fun () -> close_out oc)
     (fun () ->
